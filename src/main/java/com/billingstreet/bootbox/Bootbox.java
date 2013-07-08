@@ -1,7 +1,5 @@
 package com.billingstreet.bootbox;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.faces.component.behavior.ClientBehaviorBase;
 import javax.faces.component.behavior.FacesBehavior;
 
@@ -32,7 +30,6 @@ public class Bootbox extends ClientBehaviorBase {
     }
 
     public void setCancel(String cancel) {
-        Logger.getLogger(Bootbox.class.getName()).log(Level.INFO, "set cancel {0}", cancel);
         this.cancel = cancel;
     }
 
@@ -41,7 +38,6 @@ public class Bootbox extends ClientBehaviorBase {
     }
 
     public void setConfirm(String confirm) {
-        Logger.getLogger(Bootbox.class.getName()).log(Level.INFO, "set confirm {0}", confirm);
         this.confirm = confirm;
     }
 
