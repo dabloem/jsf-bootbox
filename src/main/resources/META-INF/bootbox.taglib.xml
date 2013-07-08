@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<facelet-taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd" version="2.0">
+    <namespace>http://billingstreet.org/bootbox</namespace>
+    <tag>
+        <tag-name>confirm</tag-name>
+        <behavior>
+            <behavior-id>bootbox</behavior-id>
+            <!--<handler-class>com.billingstreet.bootbox.BootboxHandler</handler-class>-->
+        </behavior>
+        <attribute>
+            <name>title</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>cancel</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>confirm</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>render</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>execute</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+</facelet-taglib>
