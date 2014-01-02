@@ -11,6 +11,8 @@ public class Bootbox extends ClientBehaviorBase {
     private String confirm = "OK";
     private String render = "@none";
     private String execute = "@form";
+    
+    private boolean richfaces;
 
     @Override
     public String getRendererType() {
@@ -19,7 +21,7 @@ public class Bootbox extends ClientBehaviorBase {
 
     public String getTitle() {
         return title;
-    }
+        }
 
     public void setTitle(String title) {
         this.title = title;
@@ -52,9 +54,16 @@ public class Bootbox extends ClientBehaviorBase {
     public String getExecute() {
         return execute;
     }
-
+    
     public void setExecute(String execute) {
         this.execute = execute;
     }
-    
+
+    public boolean isRichfaces() {
+        return richfaces;
+    }
+
+    public void setRichfaces(boolean richfaces) {
+        this.richfaces = richfaces;
+    }
 }

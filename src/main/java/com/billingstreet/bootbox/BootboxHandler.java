@@ -40,7 +40,7 @@ public class BootboxHandler extends TagHandler {
             bootbox.setTitle(title.getValue());
             bootbox.setCancel((cancel != null ? cancel.getValue() : "Cancel"));
             bootbox.setConfirm((confirm != null ? confirm.getValue() : "OK"));
-            bootbox.setRender(render != null ? render.getValue() : "@None");
+//            bootbox.setRender(render != null ? render.getValue() : "@None");
             ClientBehaviorHolder comp = (ClientBehaviorHolder) parent;
             comp.addClientBehavior("action", bootbox);
         }

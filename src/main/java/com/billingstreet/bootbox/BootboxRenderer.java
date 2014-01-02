@@ -21,14 +21,27 @@ public class BootboxRenderer extends ClientBehaviorRenderer {
         StringBuilder sb = new StringBuilder();
         String clientId = behaviorContext.getComponent().getClientId();
 
-        return sb
-                .append("bootbox.confirm('")
-                .append(bootbox.getTitle()).append("','").append(bootbox.getCancel()).append("','").append(bootbox.getConfirm())
-                .append("', function(result) {")
-                .append("if (result) {")
-                .append("jsf.ajax.request('").append(clientId)
-                .append("', event, {render:'").append(bootbox.getRender()).append("', execute:'").append(bootbox.getExecute()).append("'});")
-                .append("}  }); return false;")
-                .toString();
+        sb.append("bootbox.confirm('")
+            .append(bootbox.getTitle()).append("','").append(bootbox.getCancel()).append("','").append(bootbox.getConfirm())
+            .append("', function(result) {")
+            .append("if (result) {");
+        
+        if (bootbox.isRichfaces()) {
+            sb.append(getRichfacesRequest(clientId));
+        } else {
+            sb.append("jsf.ajax.request('").append(clientId)
+                .append("', event, {render:'").append(bootbox.getRender()).append("', execute:'").append(bootbox.getExecute()).append("'");
+                  if (bootbox.isRichfaces()) {
+                      sb.append(", 'parameters' : {'org.richfaces.ajax.component':'").append(clientId).append("'")
+                        .append(", '").append(clientId).append("':'").append(clientId).append("'}");
+                  }
+            sb.append("});");
+        }    
+        return sb.append("}  }); return false;").toString();
+    }
+    
+    private String getRichfacesRequest(String clientId) {
+        return "RichFaces.ajax('" + clientId + "',event,{'incId':'1'});";
+        
     }
 }
