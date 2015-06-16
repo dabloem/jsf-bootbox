@@ -7,8 +7,8 @@ import javax.faces.component.behavior.FacesBehavior;
 public class Bootbox extends ClientBehaviorBase {
 
     private String title;
-    private String cancel = "Cancel";
-    private String confirm = "OK";
+//    private String cancel = "Cancel";
+//    private String confirm = "OK";
     private String render = "@none";
     private String execute = "@form";
     
@@ -26,23 +26,7 @@ public class Bootbox extends ClientBehaviorBase {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public String getCancel() {
-        return cancel;
-    }
-
-    public void setCancel(String cancel) {
-        this.cancel = cancel;
-    }
-
-    public String getConfirm() {
-        return confirm;
-    }
-
-    public void setConfirm(String confirm) {
-        this.confirm = confirm;
-    }
-
+    
     public String getRender() {
         return render;
     }
@@ -50,7 +34,6 @@ public class Bootbox extends ClientBehaviorBase {
     public void setRender(String render) {
         this.render = render;
     }
-
     public String getExecute() {
         return execute;
     }

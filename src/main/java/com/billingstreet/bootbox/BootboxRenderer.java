@@ -9,7 +9,7 @@ import javax.faces.render.FacesBehaviorRenderer;
 
 @FacesBehaviorRenderer(rendererType = "bootbox")
 @ResourceDependencies({
-    @ResourceDependency(name = "js/bootbox.js"),
+    @ResourceDependency(library = "bootbox", name = "js/bootbox.js"),
     @ResourceDependency(name = "jsf.js", library = "javax.faces")
 })
 public class BootboxRenderer extends ClientBehaviorRenderer {
@@ -22,7 +22,7 @@ public class BootboxRenderer extends ClientBehaviorRenderer {
         String clientId = behaviorContext.getComponent().getClientId();
 
         sb.append("bootbox.confirm('")
-            .append(bootbox.getTitle()).append("','").append(bootbox.getCancel()).append("','").append(bootbox.getConfirm())
+            .append(bootbox.getTitle())
             .append("', function(result) {")
             .append("if (result) {");
         

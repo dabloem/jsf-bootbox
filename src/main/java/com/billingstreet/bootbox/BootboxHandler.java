@@ -19,15 +19,15 @@ public class BootboxHandler extends TagHandler {
 
     private Bootbox bootbox = new Bootbox();
     private TagAttribute title;
-    private TagAttribute cancel;
-    private TagAttribute confirm;
+//    private TagAttribute cancel;
+//    private TagAttribute confirm;
     private TagAttribute render;
 
     public BootboxHandler(TagConfig config) {
         super(config);
         this.title = this.getRequiredAttribute("title");
-        this.cancel = this.getAttribute("cancel");
-        this.confirm = this.getAttribute("confirm");
+//        this.cancel = this.getAttribute("cancel");
+//        this.confirm = this.getAttribute("confirm");
         this.render = this.getAttribute("render");
     }
 
@@ -38,9 +38,8 @@ public class BootboxHandler extends TagHandler {
        
         if (parent instanceof ClientBehaviorHolder) {
             bootbox.setTitle(title.getValue());
-            bootbox.setCancel((cancel != null ? cancel.getValue() : "Cancel"));
-            bootbox.setConfirm((confirm != null ? confirm.getValue() : "OK"));
-//            bootbox.setRender(render != null ? render.getValue() : "@None");
+//            bootbox.setCancel((cancel != null ? cancel.getValue() : "Cancel"));
+//            bootbox.setConfirm((confirm != null ? confirm.getValue() : "OK"));
             ClientBehaviorHolder comp = (ClientBehaviorHolder) parent;
             comp.addClientBehavior("action", bootbox);
         }
